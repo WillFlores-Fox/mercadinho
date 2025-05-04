@@ -1,24 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Homemade+Apple&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'PT Sans', sans-serif;
-  }
-  
-  body {
-    background-image: url('https://academia.nubimetrics.com/hs-fs/hubfs/Supermercado%20online%20-%20alimentos%20mais%20vendidos%20no%20Mercado%20Livre-1.jpg?width=2048&height=1365&name=Supermercado%20online%20-%20alimentos%20mais%20vendidos%20no%20Mercado%20Livre-1.jpg');
+}
+
+body {
+    min-height: 100vh;
+    background-image: url('https://academia.nubimetrics.com/hs-fs/hubfs/Supermercado%20online%20-%20alimentos%20mais%20vendidos%20no%20Mercado%20Livre-1.jpg');
     background-size: cover;
     background-position: center;
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
-  }
-  
-  .container {
+    transition: background-color 0.3s;
+}
+
+.container {
     background-color: rgba(0, 0, 0, 0.8);
     width: 100%;
     max-width: 1200px;
@@ -27,80 +28,200 @@
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 0;
+    position: relative;
+    overflow: hidden;
     color: white;
-  }
-  
-  .form-section {
+}
+
+.linha-animada {
+    width: 2px;
+    background: linear-gradient(180deg, transparent, white, transparent);
+    animation: pulse 2s infinite;
+    margin: 0 10px;
+    transition: background 0.3s;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+body.light .linha-animada {
+    background: linear-gradient(180deg, transparent, black, transparent);
+}
+
+.lado-esquerdo,
+.lado-direito {
     flex: 1;
     min-width: 280px;
     display: flex;
     flex-direction: column;
+}
+
+.lado-esquerdo {
+    padding-right: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.lado-direito {
+    padding-left: 20px;
+    color: black;
+}
+
+.lado-direito .card-list h4 {
+    color: black;
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
     gap: 10px;
-  }
-  
-  .form-section input {
+    width: 100%;
+}
+
+.form-section input {
     padding: 10px;
     border: none;
     border-radius: 6px;
     font-size: 16px;
-  }
-  
-  .form-section button {
+}
+
+.form-section button {
     padding: 10px;
     font-size: 16px;
     border: none;
     border-radius: 6px;
     background-color: #ffffff;
-    color: rgb(0, 0, 0);
+    color: #000000;
     cursor: pointer;
     transition: background 0.3s;
-  }
-  
-  .form-section button:last-child {
-    background-color: #ffffff;
-  }
-  
-  .form-section button:hover {
+}
+
+.form-section button:hover {
     opacity: 0.9;
-  }
-  
-  .card-list {
-    flex: 2;
-    min-width: 280px;
+}
+
+.card-list {
     max-height: 70vh;
     overflow-y: auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 15px;
     padding-right: 10px;
-  }
-  
-  .card {
-    background-color: #212121;
+    color: black;
+}
+
+.card {
+    background-color: #eeeeee;
     border-radius: 8px;
     padding: 15px;
-    box-shadow: 0 0 10px rgba(255,255,255,0.1);
-  }
-  
-  .card h4 {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
+.card h4 {
     margin-bottom: 5px;
     font-size: 18px;
-    color: #00e676;
-  }
-  
-  .card p {
+    color: #ffffff;
+    word-break: break-word;
+}
+
+
+.card p {
     margin: 2px 0;
-  }
-  
-  @media (max-width: 768px) {
+}
+
+/* Scrollbar */
+.card-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.card-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.card-list::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.card-list {
+    scrollbar-width: thin;
+    scrollbar-color: #ffffff transparent;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
     .container {
-      flex-direction: column;
-      align-items: center;
+        flex-direction: column;
     }
-  
-    .card-list {
-      max-height: none;
+
+    .linha-animada {
+        width: 100%;
+        height: 2px;
+        margin: 20px 0;
+        background: linear-gradient(to right, transparent, white, transparent);
     }
-  }
-  
+
+    body.light .linha-animada {
+        background: linear-gradient(to right, transparent, black, transparent);
+    }
+
+    .lado-esquerdo {
+        border: none;
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+
+    .lado-direito {
+        padding-left: 0;
+    }
+}
+
+/* Modo Claro */
+body.light .container {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: black;
+}
+
+body.light .form-section button {
+    background-color: #000000;
+    color: white;
+}
+
+body.light .card {
+    background-color: #000000;
+    color: white;
+}
+
+body.light .card h4 {
+    color: white;
+}
+
+body.light .card-list::-webkit-scrollbar-thumb {
+    background-color: #000000;
+}
+
+/* Inputs Dark e Light */
+body.dark input {
+    background-color: #f0f0f0;
+    color: black;
+    border: 1px solid #ccc;
+}
+
+body.light input {
+    background-color: #121212;
+    color: white;
+    border: 1px solid #444;
+}
