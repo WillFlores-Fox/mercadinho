@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Homemade+Apple&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'PT Sans', sans-serif;
+  }
+  
+  body {
+    background-image: url('https://academia.nubimetrics.com/hs-fs/hubfs/Supermercado%20online%20-%20alimentos%20mais%20vendidos%20no%20Mercado%20Livre-1.jpg?width=2048&height=1365&name=Supermercado%20online%20-%20alimentos%20mais%20vendidos%20no%20Mercado%20Livre-1.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .container {
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    max-width: 1200px;
+    min-height: 80vh;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    color: white;
+  }
+  
+  .form-section {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .form-section input {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+  }
+  
+  .form-section button {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .form-section button:last-child {
+    background-color: #ffffff;
+  }
+  
+  .form-section button:hover {
+    opacity: 0.9;
+  }
+  
+  .card-list {
+    flex: 2;
+    min-width: 280px;
+    max-height: 70vh;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding-right: 10px;
+  }
+  
+  .card {
+    background-color: #212121;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
+  }
+  
+  .card h4 {
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #00e676;
+  }
+  
+  .card p {
+    margin: 2px 0;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card-list {
+      max-height: none;
+    }
+  }
+  
