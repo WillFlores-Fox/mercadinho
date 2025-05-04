@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mercadinho do Will</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body class="dark">
   <div class="container">
     <div class="lado-esquerdo">
       <div class="form-section">
-        <h2>Mercadinho do Will:</h2>
+        <h2>Lista de compras:</h2>
         <br>
         <input type="text" id="produto" placeholder="Nome do Produto">
         <input type="number" id="valor" placeholder="Valor do Produto">
@@ -23,9 +25,14 @@
     </div>
     <div class="linha-animada"></div>
     <div class="lado-direito">
+      <div class="total">
+        <h3>Total: R$ <span id="valor-total">0.00</span></h3>
+      </div>
+      <br>
       <div class="card-list" id="lista"></div>
     </div>
   </div>
   <script src="script.js"></script>
 </body>
+
 </html>
