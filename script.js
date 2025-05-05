@@ -50,11 +50,15 @@ function atualizarTotal() {
     const cards = lista.getElementsByClassName("card");
     let total = 0;
 
-    // Percorre todos os cards e soma os valores
+    // Percorre todos os cards e soma valor * quantidade
     for (let card of cards) {
-        const valorElement = card.querySelector("p");
-        const valor = parseFloat(valorElement.textContent.replace('Valor: R$ ', '').replace(',', '.'));
-        total += valor;
+        const valorText = card.querySelector("p:nth-of-type(1)").textContent;
+        const quantidadeText = card.querySelector("p:nth-of-type(2)").textContent;
+
+        const valor = parseFloat(valorText.replace('Valor: R$ ', '').replace(',', '.'));
+        const quantidade = parseInt(quantidadeText.replace('Quantidade: ', ''));
+
+        total += valor * quantidade;
     }
 
     // Exibe o total
