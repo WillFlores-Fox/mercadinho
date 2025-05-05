@@ -141,8 +141,6 @@ body.light .linha-animada {
 .card p {
     margin: 2px 0;
 }
-
-/* Scrollbar */
 .card-list::-webkit-scrollbar {
     width: 6px;
 }
@@ -163,6 +161,29 @@ body.light .linha-animada {
 
 .lado-direito .total {
     color: white;
+}
+
+.card.concluido {
+    text-decoration: line-through;
+    opacity: 0.6;
+    background-color: #444 ;
+    color: #ccc;
+}
+
+.card .btn-editar {
+    margin-top: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card .btn-editar:hover {
+    background-color: rgb(48, 48, 48);
 }
 
 /* Responsivo */
@@ -219,6 +240,21 @@ body.light .card-list::-webkit-scrollbar-thumb {
 
 body.light .total {
     color: black;
+}
+
+body.light .card.concluido {
+    background-color: #ccc ;
+    color: black ;
+}
+
+body.light .card .btn-editar {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+}
+
+body.light .card .btn-editar:hover {
+    background-color: #e0e0e0;
 }
 
 /* Inputs Dark e Light */
